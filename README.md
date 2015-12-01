@@ -70,9 +70,18 @@ Once you have ensured that you have access to the proper channels, getting your 
 If you have other projects running on your system Ruby, I highly encourage you to install your dependencies for this project locally if you choose to use Nix.  To do this, you can run the following commands:
 
 ```bash
+# install the Ruby Gems dependencies in the Gemfile
 bundle install --path vendor/bundle
 bundle update
+
+# install the Angular package manager, Bower
+npm i bower
+
+# install the front-end JavaScript dependencies using Bower
 rake bower:install
+
+# migrate and seed the Rails database
+rake db:migrate db:seed
 
 # Then run this to start the server from the gems in your vendor/bundle
 bundle exec rails s
