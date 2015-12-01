@@ -45,3 +45,35 @@ Those data would be summarized in simple boxes, like in this example from this [
 Another aspect of Edmonton’s dashboard we plan incorporate in our app is the ability to view data over time. By clicking on one of the data boxes, a detailed explanation of the data would expand and the data would be displayed on a graph. The graph could be standalone, allowing multiple datasets to be added to it, to allow comparison.
 
 Ideally, data with a specific location would be displayed on the page’s neighborhood map.
+
+## Setting Up Your Development Environment
+
+### Creating the virtual environment using Nix
+If you look in this repository's root directory, you should see a `default.nix` file.  This file is actually a script which declares all of the system dependencies you need to get up and running for development on this project.  This script can be run through the **Nix Package Manager**. 
+
+#### Installing Nix
+
+To install Nix, run the following command in your Unix shell:
+`curl https://nixos.org/nix/install | sh`
+
+You may also need to follow the instructions after the install in order to set up your environment for using Nix.
+
+Once you have Nix installed (you can check by running `which nix-shell`), make sure you take a look at the ~/.nix-channels config file.  Ensure that the following lines exist in that file, or else Nix might not be able to find the dependencies in the `default.nix` script.
+
+```
+https://nixos.org/channels/nixos-15.09 nixos-15.09
+https://nixos.org/channels/nixos-15.09 nixpkgs
+```
+
+Once you have ensured that you have access to the proper channels, getting your system dependencies for development on this project is a matter of a single command:`nix-shell .`
+
+If you have other projects running on your system Ruby, I highly encourage you to install your dependencies for this project locally if you choose to use Nix.  To do this, you can run the following commands:
+
+```bash
+bundle install --path vendor/bundle
+bundle update
+rake bower:install
+
+# Then run this to start the server from the gems in your vendor/bundle
+bundle exec rails s
+```
