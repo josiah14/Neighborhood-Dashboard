@@ -67,7 +67,7 @@ https://nixos.org/channels/nixos-15.09 nixpkgs
 
 Once you have ensured that you have access to the proper channels, getting your system dependencies for development on this project is a matter of a single command:`nix-shell .`
 
-**Note that if you are running on OSX, the first time you run `nix-shell .`, the install will take a while because there are some Linux dependencies that need to be compiled from the C source code that are rather large.  You may want to have other work you could be doing while you wait for the Nix package manager to compile and install your dependencies into the Nix Store.  It would also be a good idea to have your laptop plugged into a power source, since code compilation can be relatively resource intensive.**
+*Note that if you are running on OSX, the first time you run `nix-shell .`, the install will take a while because there are some Linux dependencies that need to be compiled from the C source code that are rather large.  You may want to have other work you could be doing while you wait for the Nix package manager to compile and install your dependencies into the Nix Store.  It would also be a good idea to have your laptop plugged into a power source, since code compilation can be relatively resource intensive.*
 
 If you have other projects running on your system Ruby, I highly encourage you to install your dependencies for this project locally if you choose to use Nix.  To do this, you can run the following commands:
 
