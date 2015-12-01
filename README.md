@@ -80,10 +80,10 @@ bundle update
 npm i bower
 
 # install the front-end JavaScript dependencies using Bower
-rake bower:install
+bundle exec rake bower:install
 
 # migrate and seed the Rails database
-rake db:migrate db:seed
+bundle exec rake db:migrate db:seed
 
 # Then run this to start the server from the gems in your vendor/bundle
 bundle exec rails s
